@@ -1,11 +1,11 @@
 const { BaseElement } = require('./base.elements')
 
-class Input extends BaseElement {
+class Field extends BaseElement {
     constructor(selector, index) {
         super(selector, index);
     }
 
-    async setValue(text) {
+    async getText() {
         let element;
         if (this.index) {
             element = (await $$(this.selector))[this.index];
@@ -13,8 +13,10 @@ class Input extends BaseElement {
             element = await $(this.selector);
         }
         await this.waitForVisible(element);
-        await element.setValue(text);
+        const text = await element.getText();
+        return text;
     }
+
 }
 
-module.exports = { Input };
+module.exports = { Field };

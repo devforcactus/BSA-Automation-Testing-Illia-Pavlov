@@ -1,7 +1,9 @@
-const { Button } = require('./button.element');
-const { Input } = require('./input.element');
+const { Input } = require('./input.element')
+const { Button } = require('./button.element')
+const { Field } = require('./field.element')
 
 module.exports = {
-  Button,
-  Input,
+    Input,
+    Button,
+    Field
 };
